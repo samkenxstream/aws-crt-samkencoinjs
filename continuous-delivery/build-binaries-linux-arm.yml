@@ -1,0 +1,12 @@
+version: 0.1
+phases:
+  build:
+    commands:
+      - mkdir linux-arm
+      - cd aws-crt-nodejs
+      - builder build --project=aws-crt-nodejs --skip-install run_tests=false
+      - cp -r dist/bin/native/* ../linux-arm/
+
+artifacts:
+  files:
+    - 'linux-arm/**/*'
