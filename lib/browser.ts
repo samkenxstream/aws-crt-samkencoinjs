@@ -20,7 +20,7 @@ import * as mqtt from './browser/mqtt';
 import * as http from './browser/http';
 import * as crypto from './browser/crypto';
 import * as iot from './browser/aws_iot';
-import { AWSBrowserCredentials } from './browser/auth';
+import { AWSCredentials } from './browser/auth';
 import { CrtError } from './browser/error';
 
 export {
@@ -32,5 +32,5 @@ export {
     platform,
     resource_safety,
     CrtError,
-    AWSBrowserCredentials
+    AWSCredentials
 };

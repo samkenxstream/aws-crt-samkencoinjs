@@ -48,7 +48,7 @@ export class AwsCredentialsProvider extends crt_native.AwsCredentialsProvider {
 
 export interface AwsSigningConfig extends AwsSigningConfigBase {
     /** Sources the AWS Credentials used to sign the websocket connection handshake */
-    credentials_provider: AwsCredentialsProvider;
+    provider: AwsCredentialsProvider;
 }
 
 

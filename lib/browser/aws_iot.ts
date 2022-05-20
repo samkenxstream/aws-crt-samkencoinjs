@@ -35,14 +35,7 @@ export class AwsIotMqttConnectionConfigBuilder {
             will: undefined,
             username: `?SDK=BrowserJSv2&Version=${platform.crt_version()}`,
             password: undefined,
-            websocket: {},
-            credentialConfig: {
-                refreshIdentityCallback: ()=>{},
-                algorithm: 0,
-                signature_type: 0,
-                provider: null,
-                service: "iotdevicegateway",
-            },
+            websocket: {}
         };
     }
 
@@ -206,26 +199,14 @@ export class AwsIotMqttConnectionConfigBuilder {
      *
      * @returns this builder object
      */
-     with_credentials(aws_region: string, aws_access_id: string, aws_secret_key: string, aws_sts_token?: string) {
-        this.params.credentialConfig.credentials = {
+    with_initial_credentials(aws_region: string, aws_access_id: string, aws_secret_key: string, aws_sts_token?: string, 
+        credential_provider? : any, refreshIdentity?: Function) {
+        this.params. = {
             aws_region: aws_region,
             aws_access_id: aws_access_id,
             aws_secret_key: aws_secret_key,
             aws_sts_token: aws_sts_token,
         };
-        return this;
-    }
-    
-    /**
-     * Configures AWS credentials (usually from Cognito) for this connection
-     * @param credential_provider The credential_provider used to fetch the credential
-     * @param get_identity getIdentityCallback used to refresh the identity. The callback will take credential_provider as a parameter
-     * 
-     * @returns this builder object
-     */
-     with_credentialConfig( credential_provider : any, refreshIdentity: Function){
-        this.params.credentialConfig.provider = credential_provider;
-        this.params.credentialConfig.refreshIdentityCallback = refreshIdentity;
         return this;
     }
 
