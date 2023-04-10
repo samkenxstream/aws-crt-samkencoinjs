@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "aws-crt": "file:../../../",
-    "aws-sdk": "^2.585.0",
+    "aws-sdk": "^2.1354.0",
     "jquery": "^3.5.0",
     "util": "^0.12.4"
   }
